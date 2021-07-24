@@ -18,3 +18,5 @@ Meta.defaultProps = {
   keywords: "Web development programming",
   description: "Get the latest news in thi blog",
 };
+
+export default Meta;
