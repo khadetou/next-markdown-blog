@@ -1,13 +1,14 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Post from "../components/Post";
+import { sortByDate } from "../utils";
 
 export default function Home({ posts }) {
-  console.log(posts);
   return (
     <div className="posts">
       {posts.map((post, idx) => (
-        <h3 key={idx}>{post.frontmatter.title}</h3>
+        <Post key={idx} post={post} />
       ))}
     </div>
   );
@@ -31,7 +32,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      posts: posts.sort(sortByDate),
     },
   };
 }

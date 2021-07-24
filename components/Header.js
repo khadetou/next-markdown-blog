@@ -1,10 +1,11 @@
 import Link from "next/link";
+
 const Header = () => {
   return (
     <header>
       <div className="container">
-        <Link href="/">
-          <h2>Dev BLog</h2>
+        <Link href="/" passHref>
+          <h2 style={{ cursor: "pointer" }}>Dev BLog</h2>
         </Link>
       </div>
     </header>
